@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
+import { Todolist } from './Todolist';
 
 function App() {
   return (
-    <h1>
-      ToDoList TypeScript
-    </h1>
+    <div className="App">
+      <Todolist />
+      <Todolist />
+      <Todolist />
+    </div>
   );
 }
 

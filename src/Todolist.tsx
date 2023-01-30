@@ -11,6 +11,7 @@ export type TaskType = {
 type PropsType = {
   title: string
   tasks: Array<TaskType> // або task: TaskType[]
+  removeTask: Function
 }
 
 // компонент для створення Todolist
@@ -26,7 +27,7 @@ export function Todolist(props: PropsType) {
 
       <ul>
         {
-          props.tasks.map(t => <li><input type="checkbox" checked={t.isDone} /><span>{t.title}</span></li>)
+          props.tasks.map(t => <li><input type="checkbox" checked={t.isDone} /><span>{t.title}</span><button onClick={() => { props.removeTask(t.id) }}>x</button></li>)
         }
       </ul>
 

@@ -5,7 +5,8 @@ import { TaskType, Todolist } from './Todolist';
 let tasks1 = [
   { id: 1, title: "CSS&HTML", isDone: true },
   { id: 2, title: "JavaScript", isDone: true },
-  { id: 3, title: "React", isDone: false }
+  { id: 3, title: "React", isDone: false },
+  { id: 4, title: "Redux", isDone: false }
 ]
 
 // можна експортувати TaskType з Todolst.tsx, щоб tasks2 відповідав масиву об'єктів TaskType - мінімізує імовірність помилки при формуванні об'єктів

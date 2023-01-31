@@ -1,4 +1,5 @@
 import React from 'react';
+import { FilterValueType } from './App';
 
 // типізація props
 export type TaskType = {
@@ -10,8 +11,9 @@ export type TaskType = {
 // типізація props
 type PropsType = {
   title: string
-  tasks: Array<TaskType> // або task: TaskType[]
-  removeTask: Function
+  tasks: Array<TaskType>    // або task: TaskType[]
+  removeTask: (id: number) => void    // на вході приймає (id: number), а на виході нічого не повертає (void)
+  changeFilter: (value: FilterValueType) => void    // на вході приймає (value: FilterValueType), а на виході нічого не повертає (void)
 }
 
 // компонент для створення Todolist
@@ -32,9 +34,9 @@ export function Todolist(props: PropsType) {
       </ul>
 
       <div>
-        <button>All</button>
-        <button>Active</button>
-        <button>Completed</button>
+        <button onClick={() => { props.changeFilter("all") }}>All</button>
+        <button onClick={() => { props.changeFilter("active") }}>Active</button>
+        <button onClick={() => { props.changeFilter("completed") }}>Completed</button>
       </div>
     </div>
   );
